@@ -11,7 +11,7 @@ caches while development   :- caching of  build
 makes app compatible with older version of browser
 https on dev  
 manages port number  for more than two  projects 
-tree shaking : removing unwanted code
+tree shaking :- removing unwanted code
 
   "main": "app.js", :- try changing the file extension of "main" in package.json.
 
