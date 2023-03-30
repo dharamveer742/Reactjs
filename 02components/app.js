@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 
-
-
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 /*
@@ -26,20 +22,22 @@ footer
 
 
 */
+
 const Header = ()=>{
-    return(
-        <div className="header">
-           <a href="/"> <img alt="error" src="https://e0.pxfuel.com/wallpapers/174/289/desktop-wallpaper-printable-customizable-restaurant-logo-templates-food-logo.jpg"></img></a>
-            <div className="navItems">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>cart</li>
-                </ul>
-            </div>
-        </div>
-    )
+  return(
+      <div className="header">
+         <a href="/"> <img alt="error" src="https://e0.pxfuel.com/wallpapers/174/289/desktop-wallpaper-printable-customizable-restaurant-logo-templates-food-logo.jpg"></img></a>
+          <div className="navItems">
+              <ul>
+                  <li>Home</li>
+                  <li>About us</li>
+                  <li>cart</li>
+              </ul>
+          </div>
+      </div>
+  )
 }
+
 
 /*const RestaurantCard = ()=>(
     <div className="card">
@@ -98,6 +96,7 @@ const RestaurantCard = (props)=>(
 }*/
 
 // using spread operator
+
 const RestaurantCard = ({cloudinaryImageId,name,cuisines,totalRatings})=>{
     return(
     <div className="card">
