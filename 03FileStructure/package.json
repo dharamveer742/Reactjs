@@ -1,0 +1,21 @@
+{
+  "name": "03filestructure",
+  "version": "1.0.0",
+  "description": "File structure and import,export in react",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "author": "Dharamveer",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  }
+}

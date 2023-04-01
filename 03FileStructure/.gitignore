@@ -1,0 +1,4 @@
+node_modules
+dist
+app2.js
+.parcel-cache
