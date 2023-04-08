@@ -1,7 +1,7 @@
 const Profile = ()=>{
     return(
         <>
-            <h1>This is profile page </h1>
+            <h1>This is  Dynamically routed profile page</h1>
         </>
     )
 }

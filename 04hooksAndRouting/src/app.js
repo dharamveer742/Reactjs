@@ -9,6 +9,7 @@ import Contact from "./components/contact"
 import RestaurantMenu from "./components/restaurantMenu";
 import Profile from "./components/profile";
 
+
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 
 const AppLayOut = ()=>{
