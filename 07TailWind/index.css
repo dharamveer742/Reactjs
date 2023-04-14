@@ -1,0 +1,62 @@
+/*
+on the go (in the same file)
+reusable
+more customizable than other component libraries(material ui)
+less bundle size  :- the classes that are used only shipped for production 
+easy debugging :- common classNames 
+fast development :- no need to switch between css and html files
+*/
+
+
+/* Adding  Tailwind directives to our main CSS file*/
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/*
+
+
+{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid black;
+    margin:10px;
+}
+.header img{
+    width:80px;
+}
+.navItems >ul{
+    display: flex;
+    justify-content: center;
+    list-style-type:none;
+}
+.navItems >ul >li{
+    padding:10px;
+}
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    margin:10px;
+
+}
+.card{
+    width:200px;
+    border:1px solid black;
+    margin:10px;
+    overflow: hidden;
+}
+.card > img{
+    width:100%;
+    
+}
+*/
