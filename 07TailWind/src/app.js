@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-Dom/client"
 import Header from "./components/header";
 import Body from "./components/body";
@@ -23,13 +23,24 @@ const Instamart = lazy( ()=>import("./components/instamart"));
 
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 
+import UserContext from "./utils/userContext"
+
 const AppLayOut = ()=>{
+    const[user,setUser]=useState({
+        name:"Dharamveer",
+        email:"Dharamveer45@gmail.com",    
+    });
     return(
+        <UserContext.Provider value={{user:user,setUser:setUser}}>
         <>
+         
         <Header/>
         <Outlet/>
         <Footer/>
+      
         </>
+        </UserContext.Provider>
+       
     )
 }
 

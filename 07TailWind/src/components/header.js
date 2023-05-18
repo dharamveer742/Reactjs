@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useState,useContext} from "react";
 import { Link } from "react-router-dom";
 import Instamart from "./instamart";
+import UserContext from "../utils/userContext";
 const LoggedIn = ()=>{
     // API caal for authentication
     return true;
@@ -8,6 +9,7 @@ const LoggedIn = ()=>{
 
 const Header = ()=>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
+    const {user} = useContext(UserContext);
     return(
         <div className="flex justify-between bg-blue-100  shadow-lg sm:bg-violet-400">
            <a href="/"> <img className="h-28 pl-2" alt="logo" src="https://e0.pxfuel.com/wallpapers/174/289/desktop-wallpaper-printable-customizable-restaurant-logo-templates-food-logo.jpg"></img></a>
@@ -19,6 +21,7 @@ const Header = ()=>{
                     <Link to="/Instamart"><li className="px-2">Instamart</li></Link>
                 </ul>
             </div>
+            <span className="text-xl">{user.name}</span>
             {isLoggedIn?<button onClick={()=>{
                 setIsLoggedIn(false);
             }}>LogOut</button>:<button onClick={()=>{

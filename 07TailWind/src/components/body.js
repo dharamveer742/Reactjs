@@ -1,10 +1,11 @@
 import { restaurantList } from "../constants";
 import RestaurantCard from "./restaurantCard";
-import {useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
 import Schimmer from "./schimmer";
 import {Link} from "react-router-dom"
 import useIsOnline from "../utils/useIsOnline"
 import { filterData } from "../utils/common";
+import UserContext from "../utils/userContext"
 
 
 
@@ -17,12 +18,7 @@ const Body = ()=>{
     const[allRestaurants,setAllRestaurants] = useState([]);
     const[inputText,setInputText] = useState("");
     const[restaurants,setRestaurants] = useState(restaurantList);
-   /* const textObj =useState();
-    console.log(typeof(textObj))  */
-
-
-    // empty dependency array : once after intial render
-    // dep array [inputText] :- once after intial render + every time after render(inpuText changes)
+    const{user,setUser} = useContext(UserContext);
 
     useEffect(()=>{
         getRestaurant();
@@ -63,6 +59,10 @@ const Body = ()=>{
             }}> 
                 search
             </button> 
+
+            <input onChange={(e)=>{
+                setUser({name:e.target.value,email:"newemail@gmail.com"})
+            }}></input>
             
         </div>
         
