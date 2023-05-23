@@ -15,10 +15,11 @@ const RestaurantMenu =  ()=>{
     const {id} = params;
     
     const restaurant = useRestaurantMenu(id)   /* when state changes inside hook then it returns  updated values to restaurant */
-    console.log(restaurant);  
+    
+     
     const dispatch = useDispatch();            
-    const handleItem=()=>{
-            dispatch(addItem("grapes"));
+    const handleItem=(name)=>{
+            dispatch(addItem(name));
     }
 
     if(!restaurant){
@@ -35,13 +36,17 @@ const RestaurantMenu =  ()=>{
             <h3>{restaurant?.cards[0]?.card?.card?.info?.city}</h3>
             <h3>{restaurant.cards[0].card.card.info.areaName}</h3>
             <h3>{restaurant.cards[0].card.card.info.costForTwo}</h3>
-            <button className="bg-green-400 p-2 m-2" onClick={()=>handleItem()}>AddItem</button>
+           {/* <button className="bg-green-400 p-2 m-2" onClick={()=>handleItem()}>AddItem</button>*/}
                 
         </div>
+        
         <div>
             <h1>Menu</h1>
             <ul>
-                {/*Menu items */}
+            {   restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards.map((item)=>(
+                <li key={item?.card?.info?.id}>{item?.card?.info?.name}- {" "} {/*console.log(item.card.info)*/} <button className="bg-green-400 p-2 m-2" onClick={()=>handleItem(item?.card?.info)}> AddItem </button>  </li>  )  )
+                
+            }
             </ul>
         </div>
     </div>
@@ -49,6 +54,8 @@ const RestaurantMenu =  ()=>{
 }
 
 export default  RestaurantMenu;
+
+
 
 
 // https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6558126&lng=77.2419522&restaurantId=229&submitAction=ENTER

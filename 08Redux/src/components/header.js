@@ -22,7 +22,7 @@ const Header = ()=>{
                     <Link to="/about"><li className="px-2">About us</li></Link>
                     
                     <Link to="/Instamart"><li className="px-2">Instamart</li></Link>
-                    <li>cart - {cartItems.length}</li>
+                    <Link to="/cart"> <li>cart - {cartItems.length}</li></Link>
                 </ul>
             </div>
             <span className="text-xl">{user.name}</span>

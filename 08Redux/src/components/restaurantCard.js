@@ -11,4 +11,4 @@ const RestaurantCard = ({cloudinaryImageId,name,cuisines,totalRatings})=>{
 )
 }
 
-export default RestaurantCard;
+export default RestaurantCard;     

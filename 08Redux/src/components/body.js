@@ -27,7 +27,7 @@ const Body = ()=>{
     async function getRestaurant(){
         const restaurantData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3278298&lng=78.0325594&page_type=DESKTOP_WEB_LISTING"); 
         const json = await restaurantData.json();
-        console.log(json)
+       // console.log(json)
        setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     }
@@ -71,7 +71,7 @@ const Body = ()=>{
             {restaurants.map((restaurant)=>{ 
                 return(
                     <Link to={   "/restaurant/"+restaurant.data.id}  key={restaurant.data.id}>
-                        {console.log(restaurant.data.id)}
+                        {/*console.log(restaurant.data.id) */}
                         <RestaurantCard {...restaurant.data} />
                     </Link>
                 )
@@ -81,4 +81,4 @@ const Body = ()=>{
     )
 }
 
-export default Body;
+export default Body;  // b372f03cac692917d30d9d7b60f5ec8d

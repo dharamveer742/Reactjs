@@ -11,6 +11,7 @@ import Profile from "./components/profile";
 import {lazy,Suspense} from "react";
 import Schimmer from "./components/schimmer";
 import {Provider} from "react-redux";
+import Cart from "./components/cart"
 
 
 // Bundle chunking 
@@ -76,7 +77,11 @@ const appRouter =  createBrowserRouter([
             {
                 path:"/Instamart",
                 element:(<Suspense fallback={<Schimmer></Schimmer>}><Instamart/></Suspense>)
-            } 
+            } ,
+            {
+                path:"/cart",
+                element:<Cart></Cart>
+            }
     ]
     },
     {
@@ -84,6 +89,7 @@ const appRouter =  createBrowserRouter([
         element:<About></About>,
         errorElement:<Error/>
     },
+    
 ]);
 
 
